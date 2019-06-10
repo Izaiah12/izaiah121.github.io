@@ -53,7 +53,7 @@ function printTunePadCode() {
         var rest = hit[1] - lastTime;
         output.push("rest(" + rest + ")" ); 
         output.push(`playNote(${hit[2]}, beats=0.25)\n`);
-        lastTime = hit[1]; 
+        lastTime = hit[1] + .25; 
     }
  tunePadCode.innerHTML = output.join("\n");    
 }
