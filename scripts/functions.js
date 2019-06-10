@@ -25,6 +25,14 @@ function secondsToBeats(s){
     return s * bps; 
 }
 
+//create beats to seconds 
+
+function beatsToSeconds(beats){
+    
+    var bps = bpm/60.0; 
+    return beats/bps
+}
+
 //play Sound Function 
 
 function playSound(name, time) {
@@ -62,7 +70,7 @@ function printTunePadCode() {
         rest = secondsToBeats(rest);
         output.push("rest(" + rest + ")" ); 
         output.push(`playNote(${hit[2]}, beats=0.25)\n`);
-        lastTime = hit[1] + .25; 
+        lastTime = hit[1] + beatsToSeconds(.25); 
     }
  tunePadCode.innerHTML = output.join("\n");    
 }
