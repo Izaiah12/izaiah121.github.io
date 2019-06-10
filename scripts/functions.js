@@ -1,4 +1,5 @@
-var sound_prefix = "https://tunepad.live/assets/sounds/drumkit12/";
+var sound_prefix = "/sounds/";
+
 
 var drums = document.getElementsByClassName("drum");
 
