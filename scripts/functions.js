@@ -1,4 +1,5 @@
 var sound_prefix = "/sounds/";
+var bpm = 120.0; 
 
 
 var drums = document.getElementsByClassName("drum");
@@ -16,6 +17,13 @@ var drumSound = [];
 
 var drumBuffers = {};
 
+
+//Function to convert seconds to beats:
+
+function secondsToBeats(s){
+    var bps = bpm/60.0; 
+    return s * bps; 
+}
 
 //play Sound Function 
 
@@ -51,6 +59,7 @@ function printTunePadCode() {
     var lastTime = 0.0; 
     for (let hit of recordingArray){
         var rest = hit[1] - lastTime;
+        rest = secondsToBeats(rest);
         output.push("rest(" + rest + ")" ); 
         output.push(`playNote(${hit[2]}, beats=0.25)\n`);
         lastTime = hit[1] + .25; 
