@@ -66,13 +66,9 @@ function printTunePadCode() {
     }
  tunePadCode.innerHTML = output.join("\n");    
 }
-  
 
 
-for (let drum of drums) {
-   loadDrumSound(drum.dataset.sound); 
-   
-   drum.onmousedown = function(e) {
+function drumHit(e, drum) {
         playSound(drum.dataset.sound, 0); 
    		if (recording){
          
@@ -99,6 +95,13 @@ for (let drum of drums) {
          
      }
    }
+
+
+for (let drum of drums) {
+   loadDrumSound(drum.dataset.sound); 
+   
+   drum.onmousedown = function(e) { drumHit(e, drum); }
+   
 }
 
 
