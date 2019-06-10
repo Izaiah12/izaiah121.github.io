@@ -1,4 +1,4 @@
-var sound_prefix = "/sounds/core1/";
+var sound_prefix = "/sounds/";
 
 
 var drums = document.getElementsByClassName("drum");
