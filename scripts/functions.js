@@ -164,12 +164,11 @@ play_button.onclick = function(e){
 
 }
 
-document.onkeypress = function(e){
-    
-    if (e.keycCode == 48){  // pressed the '0' key
+document.onkeypress = function(e) {
+    if (e.keyCode == 48){  // pressed the '0' key
         drumHit(e, document.getElementById("drum0"));
     }
-    else if(e.keycCode == 50){  // pressed the '2' key
+    else if(e.keyCode == 50){  // pressed the '2' key
         drumHit(e, document.getElementById("drum2"));
     }
     else if(e.keyCode == 52){  // pressed the '4' key
